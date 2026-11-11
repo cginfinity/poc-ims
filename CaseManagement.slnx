@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="src/CaseManagement.Api/CaseManagement.Api.csproj" Id="41993004-a229-484c-a842-5877f42175f4" />
+  <Project Path="src/CaseManagement.Ui/CaseManagement.Ui.esproj" Id="d4f93330-6f5f-4a6f-8e49-b95303b94862">
+    <Build />
+    <Deploy />
+  </Project>
+
+</Solution>
