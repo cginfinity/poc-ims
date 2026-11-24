@@ -4,3 +4,8 @@ GET {{CaseManagement.Api_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+GET {{CaseManagement.Api_HostAddress}}/api/CaseRecord/company/1
+Accept: application/json
+
+###

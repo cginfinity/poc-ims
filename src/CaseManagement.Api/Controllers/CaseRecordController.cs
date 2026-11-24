@@ -45,6 +45,22 @@ namespace CaseManagement.Api.Controllers
             return cases;
         }
 
+        [HttpGet("company/{companyId}")]
+        public async Task<ActionResult<IEnumerable<CaseRecord>>> GetCasesByCompanyId(int companyId)
+        {
+            var cases = await (
+                from company in _context.Companies
+                join beneficiary in _context.Beneficiaries
+                    on company.Id equals beneficiary.CompanyId
+                join caseRecord in _context.Cases
+                    on beneficiary.Id equals caseRecord.BeneficiaryId
+                where company.Id == companyId
+                select caseRecord)
+                .ToListAsync();
+
+            return cases;
+        }
+
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCaseRecord(int id, CaseRecord caseRecord)
         {
